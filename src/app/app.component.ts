@@ -11,6 +11,8 @@ export class AppComponent {
     {title: 'Buy Bread for breakfast', description:'Go to the supermarket and buy the bread along with batter'},
     {title:'Complete the angular material firebase application'}
   ];
+inProgress: Task[] = [];
+done: Task[] = [];
 
 
 }
