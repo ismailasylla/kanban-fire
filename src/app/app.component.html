@@ -4,3 +4,23 @@
 </mat-toolbar>
 
 <app-tasks *ngFor="let task of todo" [task]="task"></app-tasks>
+
+<div class="content-wrapper">
+  <div class="container-wrapper">
+    <div class="container">
+      <h2>Backlog</h2>
+      <mat-card cdkDropList id="todo" #todoList="cdkDropList" [cdkDropListData]="todo"
+        (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[inProgressList, doneList]">
+        <app-task cdkDrag *ngFor="let task of todo" [task]="task" (edit)="edit('todo, $event')"></app-task>
+      </mat-card>
+    </div>
+    <div class="container">
+      <h2>In Progress</h2>
+      <mat-card></mat-card>
+    </div>
+    <div class="container">
+      <h2>Done</h2>
+      <mat-card></mat-card>
+    </div>
+  </div>
+</div>
